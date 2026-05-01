@@ -21,8 +21,8 @@ st.markdown("""
 Adjust the inputs below to see how bond prices react to interest rate changes.
 
 **Core idea:**
-- 📉 If market rates rise above the coupon → bond trades at a **discount**
-- 📈 If market rates fall below the coupon → bond trades at a **premium**
+-  If market rates rise above the coupon → bond trades at a **discount**
+-  If market rates fall below the coupon → bond trades at a **premium**
 """)
 
 st.divider()
@@ -30,7 +30,7 @@ st.divider()
 # -------------------------
 # PRESETS
 # -------------------------
-st.subheader("⚙️ Scenario Presets")
+st.subheader("Scenario Presets")
 
 preset = st.radio(
     "Choose a scenario:",
@@ -118,13 +118,13 @@ st.subheader("Results")
 r1, r2, r3, r4 = st.columns(4)
 
 r1.metric(
-    "💰 Bond Price",
+    "Bond Price",
     f"${bond_price:,.2f}",
     f"{premium_discount:+,.2f}"
 )
 
 r2.metric(
-    "📬 Annual Coupon",
+    "Annual Coupon",
     f"${annual_coupon:,.2f}"
 )
 
@@ -134,7 +134,7 @@ r3.metric(
 )
 
 r4.metric(
-    "📉 % vs Face Value",
+    " % vs Face Value",
     f"{pct_change:+.2f}%"
 )
 
@@ -153,7 +153,7 @@ elif bond_price < face_value:
         "This dynamic is exactly what impacted SVB."
     )
 else:
-    st.info("⚖️ **Par Bond** — Coupon equals market rate")
+    st.info("**Par Bond** — Coupon equals market rate")
 
 # -------------------------
 # SVB ANALYSIS
@@ -207,7 +207,7 @@ These losses were largely hidden on the balance sheet until liquidity pressure f
 # CHART
 # -------------------------
 st.divider()
-st.subheader("📉 Price Sensitivity to Interest Rates")
+st.subheader("Price Sensitivity to Interest Rates")
 
 rates = np.arange(0.5, 20.25, 0.25)
 prices = [
