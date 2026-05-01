@@ -13,7 +13,7 @@ st.set_page_config(
 # -------------------------
 # HEADER
 # -------------------------
-st.title("🏦 Bond Price Calculator")
+st.title("Bond Price Calculator")
 
 st.markdown("""
 ### Understand Bond Pricing in Seconds
@@ -57,7 +57,7 @@ st.divider()
 # -------------------------
 # INPUTS
 # -------------------------
-st.subheader("🧮 Inputs")
+st.subheader("Inputs")
 
 col1, col2 = st.columns(2)
 
@@ -113,7 +113,7 @@ pct_change = (premium_discount / face_value) * 100
 # RESULTS
 # -------------------------
 st.divider()
-st.subheader("📊 Results")
+st.subheader("Results")
 
 r1, r2, r3, r4 = st.columns(4)
 
@@ -129,7 +129,7 @@ r2.metric(
 )
 
 r3.metric(
-    "📦 Total Payout",
+    "Total Payout",
     f"${(annual_coupon * years_to_maturity + face_value):,.2f}"
 )
 
@@ -145,11 +145,11 @@ st.divider()
 
 if bond_price > face_value:
     st.success(
-        f"📈 **Premium Bond** — Coupon ({coupon_rate}%) > Market ({market_rate}%)"
+        f"**Premium Bond** — Coupon ({coupon_rate}%) > Market ({market_rate}%)"
     )
 elif bond_price < face_value:
     st.error(
-        f"📉 **Discount Bond** — Market ({market_rate}%) > Coupon ({coupon_rate}%)\n\n"
+        f"**Discount Bond** — Market ({market_rate}%) > Coupon ({coupon_rate}%)\n\n"
         "This dynamic is exactly what impacted SVB."
     )
 else:
@@ -160,7 +160,7 @@ else:
 # -------------------------
 if "SVB" in preset:
     st.divider()
-    st.subheader("🏦 SVB Scenario Breakdown")
+    st.subheader("SVB Scenario Breakdown")
 
     loss_per_bond = face_value - bond_price
     pct_loss = (loss_per_bond / face_value) * 100
@@ -226,7 +226,7 @@ st.line_chart(df)
 # TABLE
 # -------------------------
 st.divider()
-st.subheader("📋 SVB Portfolio Reference")
+st.subheader("SVB Portfolio Reference")
 
 st.dataframe(pd.DataFrame({
     "Metric": [
